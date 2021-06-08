@@ -1,0 +1,901 @@
+namespace Julian_Pacheco_Lab_6
+{
+    partial class juliansBookstoreForm
+    {
+        /// <summary>
+        /// Required designer variable.
+        /// </summary>
+        private System.ComponentModel.IContainer components = null;
+
+        /// <summary>
+        /// Clean up any resources being used.
+        /// </summary>
+        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && (components != null))
+            {
+                components.Dispose();
+            }
+            base.Dispose(disposing);
+        }
+
+        #region Windows Form Designer generated code
+
+        /// <summary>
+        /// Required method for Designer support - do not modify
+        /// the contents of this method with the code editor.
+        /// </summary>
+        private void InitializeComponent()
+        {
+            this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(juliansBookstoreForm));
+            this.loginGroupBox = new System.Windows.Forms.GroupBox();
+            this.loginButton = new System.Windows.Forms.Button();
+            this.clearButton = new System.Windows.Forms.Button();
+            this.userNameTextBox = new System.Windows.Forms.TextBox();
+            this.phoneNumMaskedTextBox = new System.Windows.Forms.MaskedTextBox();
+            this.enterUserNameDescriptionLabel = new System.Windows.Forms.Label();
+            this.enterPhoneNumDescriptionLabel = new System.Windows.Forms.Label();
+            this.userNameErrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
+            this.menuToolStrip = new System.Windows.Forms.ToolStrip();
+            this.exitToolStripButton = new System.Windows.Forms.ToolStripButton();
+            this.clearToolStripButton = new System.Windows.Forms.ToolStripButton();
+            this.saveAsToolStripButton = new System.Windows.Forms.ToolStripButton();
+            this.saveExitClearImageList = new System.Windows.Forms.ImageList(this.components);
+            this.bookSelectionGroupBox = new System.Windows.Forms.GroupBox();
+            this.bookInStockListBox = new System.Windows.Forms.ListBox();
+            this.myContextMenuStrip = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.notePadToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.searchTheWebToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.closeNotesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.closeWebBrowserToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.booksInStockDescriptionLabel = new System.Windows.Forms.Label();
+            this.bookCatagoriesComboBox = new System.Windows.Forms.ComboBox();
+            this.selectedBookGroupBox = new System.Windows.Forms.GroupBox();
+            this.bookCategoryPictureBox = new System.Windows.Forms.PictureBox();
+            this.bookDisplayPriceLabel = new System.Windows.Forms.Label();
+            this.bookPriceDescriptionLabel = new System.Windows.Forms.Label();
+            this.bookSelectedPictureBox = new System.Windows.Forms.PictureBox();
+            this.programStatusStrip = new System.Windows.Forms.StatusStrip();
+            this.dateTimeToolStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
+            this.currentTimer = new System.Windows.Forms.Timer(this.components);
+            this.shoppingCartGroupBox = new System.Windows.Forms.GroupBox();
+            this.shoppingCartDisplayPriceLabel = new System.Windows.Forms.Label();
+            this.shoppingCartPriceDescriptionLabel = new System.Windows.Forms.Label();
+            this.addToCartButton = new System.Windows.Forms.Button();
+            this.removeButton = new System.Windows.Forms.Button();
+            this.clearShoppingCartButton = new System.Windows.Forms.Button();
+            this.shoppingComboxBox = new System.Windows.Forms.ComboBox();
+            this.processGroupBox = new System.Windows.Forms.GroupBox();
+            this.exitProcessButton = new System.Windows.Forms.Button();
+            this.clearProcessButton = new System.Windows.Forms.Button();
+            this.finalizeSaleButton = new System.Windows.Forms.Button();
+            this.bookSelectionListView = new System.Windows.Forms.ListView();
+            this.bookNameColumnHeader = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.bookPriceColumnHeader = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.totalShoppingCartDescriptionLabel = new System.Windows.Forms.Label();
+            this.shoppingCartTotalDisplayLabel = new System.Windows.Forms.Label();
+            this.commentGroupBox = new System.Windows.Forms.GroupBox();
+            this.nameTextBox = new System.Windows.Forms.TextBox();
+            this.bookTitleTextBox = new System.Windows.Forms.TextBox();
+            this.nameDescriptionLabel = new System.Windows.Forms.Label();
+            this.bookTitleLabel = new System.Windows.Forms.Label();
+            this.submitButton = new System.Windows.Forms.Button();
+            this.clearCommentButton = new System.Windows.Forms.Button();
+            this.commentRichTextBox = new System.Windows.Forms.RichTextBox();
+            this.watchRelatedVideoButton = new System.Windows.Forms.Button();
+            this.saveAsFileDialog = new System.Windows.Forms.SaveFileDialog();
+            this.noIconToolTip = new System.Windows.Forms.ToolTip(this.components);
+            this.IconToolTip = new System.Windows.Forms.ToolTip(this.components);
+            this.juliansBoookstoreDescriptionLabel = new System.Windows.Forms.Label();
+            this.youtubeWebBrowser = new System.Windows.Forms.WebBrowser();
+            this.notePadProcess = new System.Diagnostics.Process();
+            this.edgeProcess = new System.Diagnostics.Process();
+            this.finalSaleToolStripButton = new System.Windows.Forms.ToolStripButton();
+            this.watchRelatedToolStripButton = new System.Windows.Forms.ToolStripButton();
+            this.addCartToolStripButton = new System.Windows.Forms.ToolStripButton();
+            this.removeToolStripButton = new System.Windows.Forms.ToolStripButton();
+            this.clearCartStripButton = new System.Windows.Forms.ToolStripButton();
+            this.myNotifyIcon = new System.Windows.Forms.NotifyIcon(this.components);
+            this.myStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
+            this.loginGroupBox.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.userNameErrorProvider)).BeginInit();
+            this.menuToolStrip.SuspendLayout();
+            this.bookSelectionGroupBox.SuspendLayout();
+            this.myContextMenuStrip.SuspendLayout();
+            this.selectedBookGroupBox.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.bookCategoryPictureBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bookSelectedPictureBox)).BeginInit();
+            this.programStatusStrip.SuspendLayout();
+            this.shoppingCartGroupBox.SuspendLayout();
+            this.processGroupBox.SuspendLayout();
+            this.commentGroupBox.SuspendLayout();
+            this.SuspendLayout();
+            // 
+            // loginGroupBox
+            // 
+            this.loginGroupBox.Controls.Add(this.loginButton);
+            this.loginGroupBox.Controls.Add(this.clearButton);
+            this.loginGroupBox.Controls.Add(this.userNameTextBox);
+            this.loginGroupBox.Controls.Add(this.phoneNumMaskedTextBox);
+            this.loginGroupBox.Controls.Add(this.enterUserNameDescriptionLabel);
+            this.loginGroupBox.Controls.Add(this.enterPhoneNumDescriptionLabel);
+            this.loginGroupBox.Location = new System.Drawing.Point(12, 28);
+            this.loginGroupBox.Name = "loginGroupBox";
+            this.loginGroupBox.Size = new System.Drawing.Size(742, 57);
+            this.loginGroupBox.TabIndex = 0;
+            this.loginGroupBox.TabStop = false;
+            this.loginGroupBox.Text = "Login";
+            // 
+            // loginButton
+            // 
+            this.loginButton.Location = new System.Drawing.Point(541, 19);
+            this.loginButton.Name = "loginButton";
+            this.loginButton.Size = new System.Drawing.Size(75, 23);
+            this.loginButton.TabIndex = 3;
+            this.loginButton.Text = "&Login";
+            this.noIconToolTip.SetToolTip(this.loginButton, "Login in to Bookstore account");
+            this.loginButton.UseVisualStyleBackColor = true;
+            this.loginButton.Click += new System.EventHandler(this.loginButton_Click);
+            // 
+            // clearButton
+            // 
+            this.clearButton.Location = new System.Drawing.Point(638, 19);
+            this.clearButton.Name = "clearButton";
+            this.clearButton.Size = new System.Drawing.Size(75, 23);
+            this.clearButton.TabIndex = 4;
+            this.clearButton.Text = "&Clear";
+            this.noIconToolTip.SetToolTip(this.clearButton, "Clear a Username and Phone Number");
+            this.clearButton.UseVisualStyleBackColor = true;
+            this.clearButton.Click += new System.EventHandler(this.clearButton_Click);
+            // 
+            // userNameTextBox
+            // 
+            this.userNameTextBox.Location = new System.Drawing.Point(132, 19);
+            this.userNameTextBox.Name = "userNameTextBox";
+            this.userNameTextBox.Size = new System.Drawing.Size(100, 20);
+            this.userNameTextBox.TabIndex = 1;
+            this.userNameTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.userNameTextBox_KeyPress);
+            // 
+            // phoneNumMaskedTextBox
+            // 
+            this.phoneNumMaskedTextBox.Location = new System.Drawing.Point(367, 16);
+            this.phoneNumMaskedTextBox.Mask = "(999) 000-0000";
+            this.phoneNumMaskedTextBox.Name = "phoneNumMaskedTextBox";
+            this.phoneNumMaskedTextBox.Size = new System.Drawing.Size(100, 20);
+            this.phoneNumMaskedTextBox.TabIndex = 2;
+            // 
+            // enterUserNameDescriptionLabel
+            // 
+            this.enterUserNameDescriptionLabel.AutoSize = true;
+            this.enterUserNameDescriptionLabel.Location = new System.Drawing.Point(29, 23);
+            this.enterUserNameDescriptionLabel.Name = "enterUserNameDescriptionLabel";
+            this.enterUserNameDescriptionLabel.Size = new System.Drawing.Size(88, 13);
+            this.enterUserNameDescriptionLabel.TabIndex = 0;
+            this.enterUserNameDescriptionLabel.Text = "Enter User Name";
+            this.IconToolTip.SetToolTip(this.enterUserNameDescriptionLabel, "Enter personal account username");
+            // 
+            // enterPhoneNumDescriptionLabel
+            // 
+            this.enterPhoneNumDescriptionLabel.AutoSize = true;
+            this.enterPhoneNumDescriptionLabel.Location = new System.Drawing.Point(255, 19);
+            this.enterPhoneNumDescriptionLabel.Name = "enterPhoneNumDescriptionLabel";
+            this.enterPhoneNumDescriptionLabel.Size = new System.Drawing.Size(106, 13);
+            this.enterPhoneNumDescriptionLabel.TabIndex = 0;
+            this.enterPhoneNumDescriptionLabel.Text = "Enter Phone Number";
+            this.IconToolTip.SetToolTip(this.enterPhoneNumDescriptionLabel, "Enter phone number password ");
+            // 
+            // userNameErrorProvider
+            // 
+            this.userNameErrorProvider.ContainerControl = this;
+            // 
+            // menuToolStrip
+            // 
+            this.menuToolStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.exitToolStripButton,
+            this.clearToolStripButton,
+            this.saveAsToolStripButton,
+            this.finalSaleToolStripButton,
+            this.watchRelatedToolStripButton,
+            this.addCartToolStripButton,
+            this.removeToolStripButton,
+            this.clearCartStripButton});
+            this.menuToolStrip.Location = new System.Drawing.Point(0, 0);
+            this.menuToolStrip.Name = "menuToolStrip";
+            this.menuToolStrip.Size = new System.Drawing.Size(1051, 25);
+            this.menuToolStrip.TabIndex = 8;
+            this.menuToolStrip.Text = "menuToolStrip";
+            // 
+            // exitToolStripButton
+            // 
+            this.exitToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.exitToolStripButton.Image = ((System.Drawing.Image)(resources.GetObject("exitToolStripButton.Image")));
+            this.exitToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.exitToolStripButton.Name = "exitToolStripButton";
+            this.exitToolStripButton.Size = new System.Drawing.Size(23, 22);
+            this.exitToolStripButton.ToolTipText = "Close Program";
+            this.exitToolStripButton.Click += new System.EventHandler(this.exitToolStripButton_Click);
+            // 
+            // clearToolStripButton
+            // 
+            this.clearToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.clearToolStripButton.Image = ((System.Drawing.Image)(resources.GetObject("clearToolStripButton.Image")));
+            this.clearToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.clearToolStripButton.Name = "clearToolStripButton";
+            this.clearToolStripButton.Size = new System.Drawing.Size(23, 22);
+            this.clearToolStripButton.ToolTipText = "Clear the Form";
+            this.clearToolStripButton.Click += new System.EventHandler(this.clearToolStripButton_Click);
+            // 
+            // saveAsToolStripButton
+            // 
+            this.saveAsToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.saveAsToolStripButton.Image = ((System.Drawing.Image)(resources.GetObject("saveAsToolStripButton.Image")));
+            this.saveAsToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.saveAsToolStripButton.Name = "saveAsToolStripButton";
+            this.saveAsToolStripButton.Size = new System.Drawing.Size(23, 22);
+            this.saveAsToolStripButton.ToolTipText = "Save File";
+            this.saveAsToolStripButton.Click += new System.EventHandler(this.saveAsToolStripButton_Click);
+            // 
+            // saveExitClearImageList
+            // 
+            this.saveExitClearImageList.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("saveExitClearImageList.ImageStream")));
+            this.saveExitClearImageList.TransparentColor = System.Drawing.Color.Transparent;
+            this.saveExitClearImageList.Images.SetKeyName(0, "Close.png");
+            this.saveExitClearImageList.Images.SetKeyName(1, "Clear.png");
+            this.saveExitClearImageList.Images.SetKeyName(2, "save as.png");
+            this.saveExitClearImageList.Images.SetKeyName(3, "sale.png");
+            this.saveExitClearImageList.Images.SetKeyName(4, "watch.jpg");
+            this.saveExitClearImageList.Images.SetKeyName(5, "add_to_cart.jpg");
+            this.saveExitClearImageList.Images.SetKeyName(6, "remove_from_cart.png");
+            this.saveExitClearImageList.Images.SetKeyName(7, "clear_cart.jpg");
+            // 
+            // bookSelectionGroupBox
+            // 
+            this.bookSelectionGroupBox.Controls.Add(this.bookInStockListBox);
+            this.bookSelectionGroupBox.Controls.Add(this.booksInStockDescriptionLabel);
+            this.bookSelectionGroupBox.Controls.Add(this.bookCatagoriesComboBox);
+            this.bookSelectionGroupBox.Location = new System.Drawing.Point(12, 119);
+            this.bookSelectionGroupBox.Name = "bookSelectionGroupBox";
+            this.bookSelectionGroupBox.Size = new System.Drawing.Size(172, 439);
+            this.bookSelectionGroupBox.TabIndex = 1;
+            this.bookSelectionGroupBox.TabStop = false;
+            this.bookSelectionGroupBox.Text = "Book Selection";
+            this.bookSelectionGroupBox.Visible = false;
+            // 
+            // bookInStockListBox
+            // 
+            this.bookInStockListBox.ContextMenuStrip = this.myContextMenuStrip;
+            this.bookInStockListBox.FormattingEnabled = true;
+            this.bookInStockListBox.Location = new System.Drawing.Point(16, 203);
+            this.bookInStockListBox.Name = "bookInStockListBox";
+            this.bookInStockListBox.Size = new System.Drawing.Size(132, 134);
+            this.bookInStockListBox.TabIndex = 3;
+            this.IconToolTip.SetToolTip(this.bookInStockListBox, "Books that are in stock will be shown here");
+            this.bookInStockListBox.SelectedIndexChanged += new System.EventHandler(this.bookInStockListBox_SelectedIndexChanged);
+            // 
+            // myContextMenuStrip
+            // 
+            this.myContextMenuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.notePadToolStripMenuItem,
+            this.searchTheWebToolStripMenuItem,
+            this.closeNotesToolStripMenuItem,
+            this.closeWebBrowserToolStripMenuItem});
+            this.myContextMenuStrip.Name = "myContextMenuStrip";
+            this.myContextMenuStrip.Size = new System.Drawing.Size(176, 92);
+            // 
+            // notePadToolStripMenuItem
+            // 
+            this.notePadToolStripMenuItem.Name = "notePadToolStripMenuItem";
+            this.notePadToolStripMenuItem.Size = new System.Drawing.Size(175, 22);
+            this.notePadToolStripMenuItem.Text = "Notes";
+            this.notePadToolStripMenuItem.Click += new System.EventHandler(this.notePadToolStripMenuItem_Click);
+            // 
+            // searchTheWebToolStripMenuItem
+            // 
+            this.searchTheWebToolStripMenuItem.Name = "searchTheWebToolStripMenuItem";
+            this.searchTheWebToolStripMenuItem.Size = new System.Drawing.Size(175, 22);
+            this.searchTheWebToolStripMenuItem.Text = "Search the Web";
+            this.searchTheWebToolStripMenuItem.Click += new System.EventHandler(this.searchTheWebToolStripMenuItem_Click);
+            // 
+            // closeNotesToolStripMenuItem
+            // 
+            this.closeNotesToolStripMenuItem.Name = "closeNotesToolStripMenuItem";
+            this.closeNotesToolStripMenuItem.Size = new System.Drawing.Size(175, 22);
+            this.closeNotesToolStripMenuItem.Text = "Close Notes";
+            this.closeNotesToolStripMenuItem.Click += new System.EventHandler(this.closeNotesToolStripMenuItem_Click);
+            // 
+            // closeWebBrowserToolStripMenuItem
+            // 
+            this.closeWebBrowserToolStripMenuItem.Name = "closeWebBrowserToolStripMenuItem";
+            this.closeWebBrowserToolStripMenuItem.Size = new System.Drawing.Size(175, 22);
+            this.closeWebBrowserToolStripMenuItem.Text = "Close Web Browser";
+            this.closeWebBrowserToolStripMenuItem.Click += new System.EventHandler(this.closeWebBrowserToolStripMenuItem_Click);
+            // 
+            // booksInStockDescriptionLabel
+            // 
+            this.booksInStockDescriptionLabel.AutoSize = true;
+            this.booksInStockDescriptionLabel.Location = new System.Drawing.Point(13, 164);
+            this.booksInStockDescriptionLabel.Name = "booksInStockDescriptionLabel";
+            this.booksInStockDescriptionLabel.Size = new System.Drawing.Size(79, 13);
+            this.booksInStockDescriptionLabel.TabIndex = 2;
+            this.booksInStockDescriptionLabel.Text = "Books in Stock";
+            // 
+            // bookCatagoriesComboBox
+            // 
+            this.bookCatagoriesComboBox.FormattingEnabled = true;
+            this.bookCatagoriesComboBox.Location = new System.Drawing.Point(16, 60);
+            this.bookCatagoriesComboBox.Name = "bookCatagoriesComboBox";
+            this.bookCatagoriesComboBox.Size = new System.Drawing.Size(132, 21);
+            this.bookCatagoriesComboBox.TabIndex = 1;
+            this.bookCatagoriesComboBox.Text = "Book Categories";
+            this.bookCatagoriesComboBox.SelectedIndexChanged += new System.EventHandler(this.bookCatagoriesComboBox_SelectedIndexChanged);
+            // 
+            // selectedBookGroupBox
+            // 
+            this.selectedBookGroupBox.Controls.Add(this.bookCategoryPictureBox);
+            this.selectedBookGroupBox.Controls.Add(this.bookDisplayPriceLabel);
+            this.selectedBookGroupBox.Controls.Add(this.bookPriceDescriptionLabel);
+            this.selectedBookGroupBox.Controls.Add(this.bookSelectedPictureBox);
+            this.selectedBookGroupBox.Location = new System.Drawing.Point(207, 179);
+            this.selectedBookGroupBox.Name = "selectedBookGroupBox";
+            this.selectedBookGroupBox.Size = new System.Drawing.Size(212, 379);
+            this.selectedBookGroupBox.TabIndex = 5;
+            this.selectedBookGroupBox.TabStop = false;
+            this.selectedBookGroupBox.Text = "Selected Books";
+            this.selectedBookGroupBox.Visible = false;
+            // 
+            // bookCategoryPictureBox
+            // 
+            this.bookCategoryPictureBox.Location = new System.Drawing.Point(25, 39);
+            this.bookCategoryPictureBox.Name = "bookCategoryPictureBox";
+            this.bookCategoryPictureBox.Size = new System.Drawing.Size(141, 78);
+            this.bookCategoryPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.bookCategoryPictureBox.TabIndex = 8;
+            this.bookCategoryPictureBox.TabStop = false;
+            // 
+            // bookDisplayPriceLabel
+            // 
+            this.bookDisplayPriceLabel.AutoSize = true;
+            this.bookDisplayPriceLabel.Location = new System.Drawing.Point(131, 327);
+            this.bookDisplayPriceLabel.Name = "bookDisplayPriceLabel";
+            this.bookDisplayPriceLabel.Size = new System.Drawing.Size(0, 13);
+            this.bookDisplayPriceLabel.TabIndex = 7;
+            // 
+            // bookPriceDescriptionLabel
+            // 
+            this.bookPriceDescriptionLabel.AutoSize = true;
+            this.bookPriceDescriptionLabel.Location = new System.Drawing.Point(31, 327);
+            this.bookPriceDescriptionLabel.Name = "bookPriceDescriptionLabel";
+            this.bookPriceDescriptionLabel.Size = new System.Drawing.Size(59, 13);
+            this.bookPriceDescriptionLabel.TabIndex = 6;
+            this.bookPriceDescriptionLabel.Text = "Book Price";
+            // 
+            // bookSelectedPictureBox
+            // 
+            this.bookSelectedPictureBox.Location = new System.Drawing.Point(22, 152);
+            this.bookSelectedPictureBox.Name = "bookSelectedPictureBox";
+            this.bookSelectedPictureBox.Size = new System.Drawing.Size(162, 152);
+            this.bookSelectedPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.bookSelectedPictureBox.TabIndex = 5;
+            this.bookSelectedPictureBox.TabStop = false;
+            // 
+            // programStatusStrip
+            // 
+            this.programStatusStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.dateTimeToolStatusLabel,
+            this.myStripStatusLabel});
+            this.programStatusStrip.Location = new System.Drawing.Point(0, 671);
+            this.programStatusStrip.Name = "programStatusStrip";
+            this.programStatusStrip.Size = new System.Drawing.Size(1051, 22);
+            this.programStatusStrip.TabIndex = 4;
+            this.programStatusStrip.Text = "statusStrip1";
+            // 
+            // dateTimeToolStatusLabel
+            // 
+            this.dateTimeToolStatusLabel.Name = "dateTimeToolStatusLabel";
+            this.dateTimeToolStatusLabel.Size = new System.Drawing.Size(138, 17);
+            this.dateTimeToolStatusLabel.Text = "dateTimeToolStatusLabel";
+            // 
+            // currentTimer
+            // 
+            this.currentTimer.Enabled = true;
+            this.currentTimer.Interval = 1000;
+            this.currentTimer.Tick += new System.EventHandler(this.currentTimer_Tick);
+            // 
+            // shoppingCartGroupBox
+            // 
+            this.shoppingCartGroupBox.Controls.Add(this.shoppingCartDisplayPriceLabel);
+            this.shoppingCartGroupBox.Controls.Add(this.shoppingCartPriceDescriptionLabel);
+            this.shoppingCartGroupBox.Controls.Add(this.addToCartButton);
+            this.shoppingCartGroupBox.Controls.Add(this.removeButton);
+            this.shoppingCartGroupBox.Controls.Add(this.clearShoppingCartButton);
+            this.shoppingCartGroupBox.Controls.Add(this.shoppingComboxBox);
+            this.shoppingCartGroupBox.Location = new System.Drawing.Point(444, 179);
+            this.shoppingCartGroupBox.Name = "shoppingCartGroupBox";
+            this.shoppingCartGroupBox.Size = new System.Drawing.Size(137, 239);
+            this.shoppingCartGroupBox.TabIndex = 3;
+            this.shoppingCartGroupBox.TabStop = false;
+            this.shoppingCartGroupBox.Text = "Shopping Cart";
+            this.shoppingCartGroupBox.Visible = false;
+            // 
+            // shoppingCartDisplayPriceLabel
+            // 
+            this.shoppingCartDisplayPriceLabel.AutoSize = true;
+            this.shoppingCartDisplayPriceLabel.Location = new System.Drawing.Point(79, 197);
+            this.shoppingCartDisplayPriceLabel.Name = "shoppingCartDisplayPriceLabel";
+            this.shoppingCartDisplayPriceLabel.Size = new System.Drawing.Size(0, 13);
+            this.shoppingCartDisplayPriceLabel.TabIndex = 8;
+            // 
+            // shoppingCartPriceDescriptionLabel
+            // 
+            this.shoppingCartPriceDescriptionLabel.AutoSize = true;
+            this.shoppingCartPriceDescriptionLabel.Location = new System.Drawing.Point(31, 197);
+            this.shoppingCartPriceDescriptionLabel.Name = "shoppingCartPriceDescriptionLabel";
+            this.shoppingCartPriceDescriptionLabel.Size = new System.Drawing.Size(31, 13);
+            this.shoppingCartPriceDescriptionLabel.TabIndex = 8;
+            this.shoppingCartPriceDescriptionLabel.Text = "Total";
+            // 
+            // addToCartButton
+            // 
+            this.addToCartButton.Location = new System.Drawing.Point(10, 66);
+            this.addToCartButton.Name = "addToCartButton";
+            this.addToCartButton.Size = new System.Drawing.Size(121, 23);
+            this.addToCartButton.TabIndex = 1;
+            this.addToCartButton.Text = "Add to Cart";
+            this.noIconToolTip.SetToolTip(this.addToCartButton, "Add selected book into cart");
+            this.addToCartButton.UseVisualStyleBackColor = true;
+            this.addToCartButton.Click += new System.EventHandler(this.addToCartButton_Click);
+            // 
+            // removeButton
+            // 
+            this.removeButton.Location = new System.Drawing.Point(10, 104);
+            this.removeButton.Name = "removeButton";
+            this.removeButton.Size = new System.Drawing.Size(121, 23);
+            this.removeButton.TabIndex = 2;
+            this.removeButton.Text = "&Remove";
+            this.noIconToolTip.SetToolTip(this.removeButton, "Remove selected book from cart");
+            this.removeButton.UseVisualStyleBackColor = true;
+            this.removeButton.Click += new System.EventHandler(this.removeButton_Click);
+            // 
+            // clearShoppingCartButton
+            // 
+            this.clearShoppingCartButton.Location = new System.Drawing.Point(10, 143);
+            this.clearShoppingCartButton.Name = "clearShoppingCartButton";
+            this.clearShoppingCartButton.Size = new System.Drawing.Size(121, 23);
+            this.clearShoppingCartButton.TabIndex = 3;
+            this.clearShoppingCartButton.Text = "Clea&r Shopping Cart";
+            this.noIconToolTip.SetToolTip(this.clearShoppingCartButton, "Clear shopping cart");
+            this.clearShoppingCartButton.UseVisualStyleBackColor = true;
+            this.clearShoppingCartButton.Click += new System.EventHandler(this.clearShoppingCartButton_Click);
+            // 
+            // shoppingComboxBox
+            // 
+            this.shoppingComboxBox.FormattingEnabled = true;
+            this.shoppingComboxBox.Location = new System.Drawing.Point(10, 30);
+            this.shoppingComboxBox.Name = "shoppingComboxBox";
+            this.shoppingComboxBox.Size = new System.Drawing.Size(121, 21);
+            this.shoppingComboxBox.TabIndex = 0;
+            this.shoppingComboxBox.Text = "Shopping Cart Items";
+            // 
+            // processGroupBox
+            // 
+            this.processGroupBox.Controls.Add(this.exitProcessButton);
+            this.processGroupBox.Controls.Add(this.clearProcessButton);
+            this.processGroupBox.Controls.Add(this.finalizeSaleButton);
+            this.processGroupBox.Location = new System.Drawing.Point(444, 443);
+            this.processGroupBox.Name = "processGroupBox";
+            this.processGroupBox.Size = new System.Drawing.Size(137, 115);
+            this.processGroupBox.TabIndex = 4;
+            this.processGroupBox.TabStop = false;
+            this.processGroupBox.Text = "Process";
+            this.processGroupBox.Visible = false;
+            // 
+            // exitProcessButton
+            // 
+            this.exitProcessButton.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.exitProcessButton.Location = new System.Drawing.Point(6, 77);
+            this.exitProcessButton.Name = "exitProcessButton";
+            this.exitProcessButton.Size = new System.Drawing.Size(121, 23);
+            this.exitProcessButton.TabIndex = 2;
+            this.exitProcessButton.Text = "&Exit";
+            this.noIconToolTip.SetToolTip(this.exitProcessButton, "Initiate program termination");
+            this.exitProcessButton.UseVisualStyleBackColor = true;
+            this.exitProcessButton.Click += new System.EventHandler(this.exitProcessButton_Click);
+            // 
+            // clearProcessButton
+            // 
+            this.clearProcessButton.Location = new System.Drawing.Point(6, 48);
+            this.clearProcessButton.Name = "clearProcessButton";
+            this.clearProcessButton.Size = new System.Drawing.Size(121, 23);
+            this.clearProcessButton.TabIndex = 1;
+            this.clearProcessButton.Text = "&Clear All";
+            this.noIconToolTip.SetToolTip(this.clearProcessButton, "Clear program form");
+            this.clearProcessButton.UseVisualStyleBackColor = true;
+            this.clearProcessButton.Click += new System.EventHandler(this.clearProcessButton_Click);
+            // 
+            // finalizeSaleButton
+            // 
+            this.finalizeSaleButton.Location = new System.Drawing.Point(6, 19);
+            this.finalizeSaleButton.Name = "finalizeSaleButton";
+            this.finalizeSaleButton.Size = new System.Drawing.Size(121, 23);
+            this.finalizeSaleButton.TabIndex = 0;
+            this.finalizeSaleButton.Text = "&Finalize Sale";
+            this.noIconToolTip.SetToolTip(this.finalizeSaleButton, "Finalize book in cart ");
+            this.finalizeSaleButton.UseVisualStyleBackColor = true;
+            this.finalizeSaleButton.Click += new System.EventHandler(this.finalizeSaleButton_Click);
+            // 
+            // bookSelectionListView
+            // 
+            this.bookSelectionListView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.bookNameColumnHeader,
+            this.bookPriceColumnHeader});
+            this.bookSelectionListView.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bookSelectionListView.GridLines = true;
+            this.bookSelectionListView.HideSelection = false;
+            this.bookSelectionListView.Location = new System.Drawing.Point(614, 119);
+            this.bookSelectionListView.Name = "bookSelectionListView";
+            this.bookSelectionListView.Size = new System.Drawing.Size(341, 177);
+            this.bookSelectionListView.TabIndex = 7;
+            this.IconToolTip.SetToolTip(this.bookSelectionListView, "Purchase summary ");
+            this.bookSelectionListView.UseCompatibleStateImageBehavior = false;
+            this.bookSelectionListView.View = System.Windows.Forms.View.Details;
+            this.bookSelectionListView.Visible = false;
+            this.bookSelectionListView.SelectedIndexChanged += new System.EventHandler(this.bookSelectionListView_SelectedIndexChanged);
+            // 
+            // bookNameColumnHeader
+            // 
+            this.bookNameColumnHeader.Text = "Book Title";
+            this.bookNameColumnHeader.Width = 165;
+            // 
+            // bookPriceColumnHeader
+            // 
+            this.bookPriceColumnHeader.Text = "Book Price";
+            this.bookPriceColumnHeader.Width = 171;
+            // 
+            // totalShoppingCartDescriptionLabel
+            // 
+            this.totalShoppingCartDescriptionLabel.AutoSize = true;
+            this.totalShoppingCartDescriptionLabel.Location = new System.Drawing.Point(712, 308);
+            this.totalShoppingCartDescriptionLabel.Name = "totalShoppingCartDescriptionLabel";
+            this.totalShoppingCartDescriptionLabel.Size = new System.Drawing.Size(101, 13);
+            this.totalShoppingCartDescriptionLabel.TabIndex = 9;
+            this.totalShoppingCartDescriptionLabel.Text = "Shopping Cart Total";
+            this.totalShoppingCartDescriptionLabel.Visible = false;
+            // 
+            // shoppingCartTotalDisplayLabel
+            // 
+            this.shoppingCartTotalDisplayLabel.AutoSize = true;
+            this.shoppingCartTotalDisplayLabel.Location = new System.Drawing.Point(829, 308);
+            this.shoppingCartTotalDisplayLabel.Name = "shoppingCartTotalDisplayLabel";
+            this.shoppingCartTotalDisplayLabel.Size = new System.Drawing.Size(23, 13);
+            this.shoppingCartTotalDisplayLabel.TabIndex = 9;
+            this.shoppingCartTotalDisplayLabel.Text = "****";
+            this.shoppingCartTotalDisplayLabel.Visible = false;
+            // 
+            // commentGroupBox
+            // 
+            this.commentGroupBox.Controls.Add(this.nameTextBox);
+            this.commentGroupBox.Controls.Add(this.bookTitleTextBox);
+            this.commentGroupBox.Controls.Add(this.nameDescriptionLabel);
+            this.commentGroupBox.Controls.Add(this.bookTitleLabel);
+            this.commentGroupBox.Controls.Add(this.submitButton);
+            this.commentGroupBox.Controls.Add(this.clearCommentButton);
+            this.commentGroupBox.Controls.Add(this.commentRichTextBox);
+            this.commentGroupBox.Location = new System.Drawing.Point(613, 356);
+            this.commentGroupBox.Name = "commentGroupBox";
+            this.commentGroupBox.Size = new System.Drawing.Size(200, 230);
+            this.commentGroupBox.TabIndex = 5;
+            this.commentGroupBox.TabStop = false;
+            this.commentGroupBox.Text = "Comment Form";
+            this.IconToolTip.SetToolTip(this.commentGroupBox, "Please feel out a comment form to leave a review on any book");
+            this.commentGroupBox.Visible = false;
+            // 
+            // nameTextBox
+            // 
+            this.nameTextBox.Location = new System.Drawing.Point(84, 33);
+            this.nameTextBox.Name = "nameTextBox";
+            this.nameTextBox.Size = new System.Drawing.Size(100, 20);
+            this.nameTextBox.TabIndex = 1;
+            // 
+            // bookTitleTextBox
+            // 
+            this.bookTitleTextBox.Location = new System.Drawing.Point(84, 67);
+            this.bookTitleTextBox.Name = "bookTitleTextBox";
+            this.bookTitleTextBox.Size = new System.Drawing.Size(100, 20);
+            this.bookTitleTextBox.TabIndex = 2;
+            // 
+            // nameDescriptionLabel
+            // 
+            this.nameDescriptionLabel.AutoSize = true;
+            this.nameDescriptionLabel.Location = new System.Drawing.Point(18, 36);
+            this.nameDescriptionLabel.Name = "nameDescriptionLabel";
+            this.nameDescriptionLabel.Size = new System.Drawing.Size(60, 13);
+            this.nameDescriptionLabel.TabIndex = 0;
+            this.nameDescriptionLabel.Text = "Your Name";
+            // 
+            // bookTitleLabel
+            // 
+            this.bookTitleLabel.AutoSize = true;
+            this.bookTitleLabel.Location = new System.Drawing.Point(18, 70);
+            this.bookTitleLabel.Name = "bookTitleLabel";
+            this.bookTitleLabel.Size = new System.Drawing.Size(55, 13);
+            this.bookTitleLabel.TabIndex = 0;
+            this.bookTitleLabel.Text = "Book Title";
+            // 
+            // submitButton
+            // 
+            this.submitButton.Location = new System.Drawing.Point(21, 193);
+            this.submitButton.Name = "submitButton";
+            this.submitButton.Size = new System.Drawing.Size(75, 23);
+            this.submitButton.TabIndex = 4;
+            this.submitButton.Text = "Submit";
+            this.noIconToolTip.SetToolTip(this.submitButton, "Submit comment");
+            this.submitButton.UseVisualStyleBackColor = true;
+            this.submitButton.Click += new System.EventHandler(this.submitButton_Click);
+            // 
+            // clearCommentButton
+            // 
+            this.clearCommentButton.Location = new System.Drawing.Point(102, 193);
+            this.clearCommentButton.Name = "clearCommentButton";
+            this.clearCommentButton.Size = new System.Drawing.Size(75, 23);
+            this.clearCommentButton.TabIndex = 5;
+            this.clearCommentButton.Text = "Clea&r";
+            this.noIconToolTip.SetToolTip(this.clearCommentButton, "Click to clear comment form");
+            this.clearCommentButton.UseVisualStyleBackColor = true;
+            this.clearCommentButton.Click += new System.EventHandler(this.clearCommentButton_Click);
+            // 
+            // commentRichTextBox
+            // 
+            this.commentRichTextBox.Location = new System.Drawing.Point(6, 108);
+            this.commentRichTextBox.Name = "commentRichTextBox";
+            this.commentRichTextBox.Size = new System.Drawing.Size(182, 79);
+            this.commentRichTextBox.TabIndex = 3;
+            this.commentRichTextBox.Text = "";
+            // 
+            // watchRelatedVideoButton
+            // 
+            this.watchRelatedVideoButton.Location = new System.Drawing.Point(874, 563);
+            this.watchRelatedVideoButton.Name = "watchRelatedVideoButton";
+            this.watchRelatedVideoButton.Size = new System.Drawing.Size(123, 23);
+            this.watchRelatedVideoButton.TabIndex = 7;
+            this.watchRelatedVideoButton.Text = "&Watch Related Video";
+            this.noIconToolTip.SetToolTip(this.watchRelatedVideoButton, "Click to launch Youtube");
+            this.watchRelatedVideoButton.UseVisualStyleBackColor = true;
+            this.watchRelatedVideoButton.Visible = false;
+            this.watchRelatedVideoButton.Click += new System.EventHandler(this.watchRelatedVideoButton_Click);
+            // 
+            // saveAsFileDialog
+            // 
+            this.saveAsFileDialog.DefaultExt = "txt";
+            // 
+            // noIconToolTip
+            // 
+            this.noIconToolTip.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Info;
+            // 
+            // juliansBoookstoreDescriptionLabel
+            // 
+            this.juliansBoookstoreDescriptionLabel.AutoSize = true;
+            this.juliansBoookstoreDescriptionLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.juliansBoookstoreDescriptionLabel.Location = new System.Drawing.Point(252, 119);
+            this.juliansBoookstoreDescriptionLabel.Name = "juliansBoookstoreDescriptionLabel";
+            this.juliansBoookstoreDescriptionLabel.Size = new System.Drawing.Size(304, 25);
+            this.juliansBoookstoreDescriptionLabel.TabIndex = 12;
+            this.juliansBoookstoreDescriptionLabel.Text = "Julian\'s Discount Bookstore";
+            this.juliansBoookstoreDescriptionLabel.Visible = false;
+            // 
+            // youtubeWebBrowser
+            // 
+            this.youtubeWebBrowser.Location = new System.Drawing.Point(832, 347);
+            this.youtubeWebBrowser.MaximumSize = new System.Drawing.Size(200, 196);
+            this.youtubeWebBrowser.MinimumSize = new System.Drawing.Size(20, 20);
+            this.youtubeWebBrowser.Name = "youtubeWebBrowser";
+            this.youtubeWebBrowser.Size = new System.Drawing.Size(200, 196);
+            this.youtubeWebBrowser.TabIndex = 6;
+            this.noIconToolTip.SetToolTip(this.youtubeWebBrowser, "YouTube related video ");
+            this.youtubeWebBrowser.Visible = false;
+            // 
+            // notePadProcess
+            // 
+            this.notePadProcess.StartInfo.Domain = "";
+            this.notePadProcess.StartInfo.FileName = "notepad.exe";
+            this.notePadProcess.StartInfo.LoadUserProfile = false;
+            this.notePadProcess.StartInfo.Password = null;
+            this.notePadProcess.StartInfo.StandardErrorEncoding = null;
+            this.notePadProcess.StartInfo.StandardOutputEncoding = null;
+            this.notePadProcess.StartInfo.UserName = "";
+            this.notePadProcess.SynchronizingObject = this;
+            // 
+            // edgeProcess
+            // 
+            this.edgeProcess.StartInfo.Domain = "";
+            this.edgeProcess.StartInfo.FileName = "msedge.exe";
+            this.edgeProcess.StartInfo.LoadUserProfile = false;
+            this.edgeProcess.StartInfo.Password = null;
+            this.edgeProcess.StartInfo.StandardErrorEncoding = null;
+            this.edgeProcess.StartInfo.StandardOutputEncoding = null;
+            this.edgeProcess.StartInfo.UserName = "";
+            this.edgeProcess.SynchronizingObject = this;
+            // 
+            // finalSaleToolStripButton
+            // 
+            this.finalSaleToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.finalSaleToolStripButton.Image = ((System.Drawing.Image)(resources.GetObject("finalSaleToolStripButton.Image")));
+            this.finalSaleToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.finalSaleToolStripButton.Name = "finalSaleToolStripButton";
+            this.finalSaleToolStripButton.Size = new System.Drawing.Size(23, 22);
+            this.finalSaleToolStripButton.Text = "&Finalize Sale";
+            this.finalSaleToolStripButton.Click += new System.EventHandler(this.finalSaleToolStripButton_Click);
+            // 
+            // watchRelatedToolStripButton
+            // 
+            this.watchRelatedToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.watchRelatedToolStripButton.Image = ((System.Drawing.Image)(resources.GetObject("watchRelatedToolStripButton.Image")));
+            this.watchRelatedToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.watchRelatedToolStripButton.Name = "watchRelatedToolStripButton";
+            this.watchRelatedToolStripButton.Size = new System.Drawing.Size(23, 22);
+            this.watchRelatedToolStripButton.Text = "&Watch Related";
+            this.watchRelatedToolStripButton.Click += new System.EventHandler(this.watchRelatedToolStripButton_Click);
+            // 
+            // addCartToolStripButton
+            // 
+            this.addCartToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.addCartToolStripButton.Image = ((System.Drawing.Image)(resources.GetObject("addCartToolStripButton.Image")));
+            this.addCartToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.addCartToolStripButton.Name = "addCartToolStripButton";
+            this.addCartToolStripButton.Size = new System.Drawing.Size(23, 22);
+            this.addCartToolStripButton.Text = "Add to Cart";
+            this.addCartToolStripButton.Click += new System.EventHandler(this.addCartToolStripButton_Click);
+            // 
+            // removeToolStripButton
+            // 
+            this.removeToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.removeToolStripButton.Image = ((System.Drawing.Image)(resources.GetObject("removeToolStripButton.Image")));
+            this.removeToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.removeToolStripButton.Name = "removeToolStripButton";
+            this.removeToolStripButton.Size = new System.Drawing.Size(23, 22);
+            this.removeToolStripButton.Text = "Remove Book in Cart";
+            this.removeToolStripButton.Click += new System.EventHandler(this.removeToolStripButton_Click);
+            // 
+            // clearCartStripButton
+            // 
+            this.clearCartStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.clearCartStripButton.Image = ((System.Drawing.Image)(resources.GetObject("clearCartStripButton.Image")));
+            this.clearCartStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.clearCartStripButton.Name = "clearCartStripButton";
+            this.clearCartStripButton.Size = new System.Drawing.Size(23, 22);
+            this.clearCartStripButton.Text = "Clear Cart";
+            this.clearCartStripButton.Click += new System.EventHandler(this.clearCartStripButton1_Click);
+            // 
+            // myNotifyIcon
+            // 
+            this.myNotifyIcon.Text = "notifyIcon1";
+            this.myNotifyIcon.Visible = true;
+            // 
+            // myStripStatusLabel
+            // 
+            this.myStripStatusLabel.Name = "myStripStatusLabel";
+            this.myStripStatusLabel.Size = new System.Drawing.Size(0, 17);
+            // 
+            // juliansBookstoreForm
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.CancelButton = this.exitProcessButton;
+            this.ClientSize = new System.Drawing.Size(1051, 693);
+            this.Controls.Add(this.youtubeWebBrowser);
+            this.Controls.Add(this.juliansBoookstoreDescriptionLabel);
+            this.Controls.Add(this.watchRelatedVideoButton);
+            this.Controls.Add(this.commentGroupBox);
+            this.Controls.Add(this.shoppingCartTotalDisplayLabel);
+            this.Controls.Add(this.totalShoppingCartDescriptionLabel);
+            this.Controls.Add(this.bookSelectionListView);
+            this.Controls.Add(this.processGroupBox);
+            this.Controls.Add(this.shoppingCartGroupBox);
+            this.Controls.Add(this.programStatusStrip);
+            this.Controls.Add(this.selectedBookGroupBox);
+            this.Controls.Add(this.bookSelectionGroupBox);
+            this.Controls.Add(this.menuToolStrip);
+            this.Controls.Add(this.loginGroupBox);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Name = "juliansBookstoreForm";
+            this.Text = "Julian\'s Bookstore";
+            this.Load += new System.EventHandler(this.juliansBookstoreForm_Load);
+            this.SizeChanged += new System.EventHandler(this.juliansBookstoreForm_SizeChanged);
+            this.loginGroupBox.ResumeLayout(false);
+            this.loginGroupBox.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.userNameErrorProvider)).EndInit();
+            this.menuToolStrip.ResumeLayout(false);
+            this.menuToolStrip.PerformLayout();
+            this.bookSelectionGroupBox.ResumeLayout(false);
+            this.bookSelectionGroupBox.PerformLayout();
+            this.myContextMenuStrip.ResumeLayout(false);
+            this.selectedBookGroupBox.ResumeLayout(false);
+            this.selectedBookGroupBox.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.bookCategoryPictureBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bookSelectedPictureBox)).EndInit();
+            this.programStatusStrip.ResumeLayout(false);
+            this.programStatusStrip.PerformLayout();
+            this.shoppingCartGroupBox.ResumeLayout(false);
+            this.shoppingCartGroupBox.PerformLayout();
+            this.processGroupBox.ResumeLayout(false);
+            this.commentGroupBox.ResumeLayout(false);
+            this.commentGroupBox.PerformLayout();
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
+        }
+
+        #endregion
+
+        private System.Windows.Forms.GroupBox loginGroupBox;
+        private System.Windows.Forms.Button loginButton;
+        private System.Windows.Forms.Button clearButton;
+        private System.Windows.Forms.TextBox userNameTextBox;
+        private System.Windows.Forms.MaskedTextBox phoneNumMaskedTextBox;
+        private System.Windows.Forms.Label enterUserNameDescriptionLabel;
+        private System.Windows.Forms.Label enterPhoneNumDescriptionLabel;
+        private System.Windows.Forms.ErrorProvider userNameErrorProvider;
+        private System.Windows.Forms.ToolStrip menuToolStrip;
+        private System.Windows.Forms.ToolStripButton exitToolStripButton;
+        private System.Windows.Forms.ToolStripButton clearToolStripButton;
+        private System.Windows.Forms.ToolStripButton saveAsToolStripButton;
+        private System.Windows.Forms.ImageList saveExitClearImageList;
+        private System.Windows.Forms.GroupBox bookSelectionGroupBox;
+        private System.Windows.Forms.StatusStrip programStatusStrip;
+        private System.Windows.Forms.ToolStripStatusLabel dateTimeToolStatusLabel;
+        private System.Windows.Forms.GroupBox selectedBookGroupBox;
+        private System.Windows.Forms.Label bookDisplayPriceLabel;
+        private System.Windows.Forms.Label bookPriceDescriptionLabel;
+        private System.Windows.Forms.PictureBox bookSelectedPictureBox;
+        private System.Windows.Forms.ListBox bookInStockListBox;
+        private System.Windows.Forms.Label booksInStockDescriptionLabel;
+        private System.Windows.Forms.Timer currentTimer;
+        private System.Windows.Forms.GroupBox processGroupBox;
+        private System.Windows.Forms.GroupBox shoppingCartGroupBox;
+        private System.Windows.Forms.Label shoppingCartDisplayPriceLabel;
+        private System.Windows.Forms.Label shoppingCartPriceDescriptionLabel;
+        private System.Windows.Forms.Button addToCartButton;
+        private System.Windows.Forms.Button removeButton;
+        private System.Windows.Forms.Button clearShoppingCartButton;
+        private System.Windows.Forms.ComboBox shoppingComboxBox;
+        private System.Windows.Forms.GroupBox commentGroupBox;
+        private System.Windows.Forms.Button submitButton;
+        private System.Windows.Forms.Button clearCommentButton;
+        private System.Windows.Forms.RichTextBox commentRichTextBox;
+        private System.Windows.Forms.Label shoppingCartTotalDisplayLabel;
+        private System.Windows.Forms.Label totalShoppingCartDescriptionLabel;
+        private System.Windows.Forms.ListView bookSelectionListView;
+        private System.Windows.Forms.Button exitProcessButton;
+        private System.Windows.Forms.Button clearProcessButton;
+        private System.Windows.Forms.Button finalizeSaleButton;
+        private System.Windows.Forms.Button watchRelatedVideoButton;
+        private System.Windows.Forms.TextBox nameTextBox;
+        private System.Windows.Forms.TextBox bookTitleTextBox;
+        private System.Windows.Forms.Label nameDescriptionLabel;
+        private System.Windows.Forms.Label bookTitleLabel;
+        private System.Windows.Forms.SaveFileDialog saveAsFileDialog;
+        private System.Windows.Forms.ToolTip noIconToolTip;
+        private System.Windows.Forms.PictureBox bookCategoryPictureBox;
+        private System.Windows.Forms.ToolTip IconToolTip;
+        private System.Windows.Forms.Label juliansBoookstoreDescriptionLabel;
+        private System.Windows.Forms.ColumnHeader bookNameColumnHeader;
+        private System.Windows.Forms.ColumnHeader bookPriceColumnHeader;
+        private System.Windows.Forms.WebBrowser youtubeWebBrowser;
+        private System.Windows.Forms.ContextMenuStrip myContextMenuStrip;
+        private System.Windows.Forms.ToolStripMenuItem notePadToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem searchTheWebToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem closeNotesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem closeWebBrowserToolStripMenuItem;
+        private System.Diagnostics.Process notePadProcess;
+        private System.Diagnostics.Process edgeProcess;
+        private System.Windows.Forms.ComboBox bookCatagoriesComboBox;
+        private System.Windows.Forms.ToolStripButton finalSaleToolStripButton;
+        private System.Windows.Forms.ToolStripButton watchRelatedToolStripButton;
+        private System.Windows.Forms.ToolStripButton addCartToolStripButton;
+        private System.Windows.Forms.ToolStripButton removeToolStripButton;
+        private System.Windows.Forms.ToolStripButton clearCartStripButton;
+        private System.Windows.Forms.NotifyIcon myNotifyIcon;
+        private System.Windows.Forms.ToolStripStatusLabel myStripStatusLabel;
+    }
+}
