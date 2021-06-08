@@ -1,0 +1,28 @@
+using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System;
+
+namespace calculateSubtractingUnitTest
+{
+    [TestClass]
+    public class subtractUnitTest
+    {
+        [TestMethod]
+        public void addisubtract()
+        {
+            //Intitalizing variables
+            double target = 15.00;
+            double bookCost = 5.00;
+            double cartTotal = 20.00;
+
+            //Act phase
+            double wanted = myCalculator.calculate.subtract(cartTotal,bookCost);
+
+            //Asser Phase
+            Assert.AreEqual(target, wanted);
+        }
+
+        public void TestMethod1()
+        {
+        }
+    }
+}
