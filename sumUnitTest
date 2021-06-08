@@ -1,0 +1,23 @@
+
+    [TestClass]
+    public class addingUnitTest
+    {
+        [TestMethod]
+        public void adding()
+        {
+            //Intitalizing variables
+            double target = 10.00;
+            double bookCost = 5.00;
+            double cartTotal = 5.00;
+
+            //Act phase
+            double wanted = myCalculator.calculate.sum(bookCost,cartTotal);
+
+            //Asser Phase
+            Assert.AreEqual(target, wanted);
+        }
+        public void TestMethod1()
+        {
+        }
+    }
+}
