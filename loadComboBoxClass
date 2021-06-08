@@ -1,0 +1,16 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace myClass
+{
+    public class catergoriesBooks
+    {
+        public string catergoryOne { get; set; }
+        public string catergoryTwo { get; set; }
+        public string catergoryThree { get; set; }
+    }
+
+}
