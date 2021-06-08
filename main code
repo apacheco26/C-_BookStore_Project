@@ -1,0 +1,819 @@
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+using System.IO;
+
+namespace Julian_Pacheco_Lab_6
+{
+    /// <summary>
+    /// Note, that the search web in context menu is set to the browser Microsoft Edge. Also the program has to unit test that will test the subtract and addition class created in the class project
+    /// myCalculator. Note, that there is a second class Progject that contains the function to laod the book categories that is not tested. 
+    /// </summary>
+    public partial class juliansBookstoreForm : Form
+    {
+        public juliansBookstoreForm()
+        {
+            InitializeComponent();
+        }
+        private void ExitClearSaveLoad()
+        {
+            // This method is set up to load the pictures for each toolstrip icon using the imagelist control
+            exitToolStripButton.Image = saveExitClearImageList.Images[0];
+            clearToolStripButton.Image = saveExitClearImageList.Images[1];
+            saveAsToolStripButton.Image = saveExitClearImageList.Images[2];
+            finalSaleToolStripButton.Image = saveExitClearImageList.Images[3];
+            watchRelatedToolStripButton.Image = saveExitClearImageList.Images[4];
+            addCartToolStripButton.Image = saveExitClearImageList.Images[5];
+            removeToolStripButton.Image = saveExitClearImageList.Images[6];
+            clearCartStripButton.Image = saveExitClearImageList.Images[7];
+        }
+
+        private void addToListView()
+        {
+            // Method unpacks all the items in the cart combo box using the foreach loop to add them to the listview with each books corrasponding price. T
+            ListView shopppingListview = bookSelectionListView;
+
+            foreach (object item in shoppingComboxBox.Items)
+            {
+                if (item.ToString() == "Ruby" || item.ToString() == "Computer Networking")
+                {
+                    shopppingListview.Items.Add(item.ToString()).SubItems.Add("$129.99");
+
+                }
+                else if (item.ToString() == "Python" || item.ToString() == "Learning Web Design")
+                {
+                    shopppingListview.Items.Add(item.ToString()).SubItems.Add("$89.99");
+
+                }
+                else if (item.ToString() == "C#" || item.ToString() == "Networking For Beginners" ||
+                    item.ToString() == "Sexy Web Design")
+                {
+                    shopppingListview.Items.Add(item.ToString()).SubItems.Add("$149.99");
+
+                }
+                else if (item.ToString() == "Networking Basics")
+                {
+                    shopppingListview.Items.Add(item.ToString()).SubItems.Add("$199.99");
+
+                }
+                else if (item.ToString() == "Hello Web Design")
+                {
+                    shopppingListview.Items.Add(item.ToString()).SubItems.Add("$12.99");
+
+                }
+            }
+        }
+
+        private void sumPrice()
+        {
+            // this method is called to total the cart for the user taking advantage of the class established in a different project.
+            double bookCost = double.Parse(bookDisplayPriceLabel.Text.Trim('$'));
+            double cartTotal;
+
+            if (shoppingCartDisplayPriceLabel.Text == "")
+            {
+                cartTotal = 0.00;
+            }
+            else
+            {
+                cartTotal = double.Parse(shoppingCartDisplayPriceLabel.Text.Trim('$'));
+            }
+
+            double newCartTotal = myCalculator.calculate.sum(bookCost, cartTotal);
+            
+
+            shoppingCartDisplayPriceLabel.Text = newCartTotal.ToString("C");
+        }
+
+        private void subtractPrice()
+        {
+            // aagain using the class method we call for the same project as the addition except find the subtract method to minus the price of the removed book from cart total.
+            double bookCost = 0.00;
+            double cartTotal = double.Parse(shoppingCartDisplayPriceLabel.Text.Trim('$'));
+            string selectedBook = this.shoppingComboxBox.GetItemText(this.shoppingComboxBox.SelectedItem);
+
+
+            if (selectedBook == "Ruby" || selectedBook == "Computer Networking")
+            {
+                bookCost = 129.99;
+            }
+            else if (selectedBook == "Python" || selectedBook == "Learning Web Design")
+            {
+                bookCost = 89.99;
+            }
+            else if (selectedBook == "C#" || selectedBook == "Networking For Beginners" ||
+                selectedBook == "Sexy Web Design")
+            {
+                bookCost = 149.99;
+            }
+            else if (selectedBook == "Networking Basics")
+            {
+                bookCost = 199.99;
+            }
+            else if (selectedBook == "Hello Web Design")
+            {
+                bookCost = 12.99;
+            }
+
+            double newCartTotal = myCalculator.calculate.subtract(cartTotal,bookCost);
+
+            shoppingCartDisplayPriceLabel.Text = newCartTotal.ToString("C");
+            myStripStatusLabel.Text = "The book " + selectedBook + " was removed from cart";
+        }
+        private void saveAs()
+        {
+            // this mehtod find the file save comment that already should exist in the bin folder to append the coomment written in in the comment form. 
+            StreamWriter outputFile;
+            string author = nameTextBox.Text;
+            string bookTitle = bookTitleTextBox.Text;
+
+            outputFile = File.AppendText("Save Comments.txt");
+
+            outputFile.WriteLine("Commentor" + ": " + author);
+            outputFile.WriteLine("Book Title: " + bookTitle);
+            outputFile.WriteLine("Comment Post: ");
+            outputFile.WriteLine(commentRichTextBox.Text + Environment.NewLine);
+
+            outputFile.Close();
+        }
+        private void GroupBoxVisbility(bool onOFF)
+        {
+            /// this mehod is called for with a parameter set as a boolean to either turn on or off the visibility of groups, buttons and clear forms sections. 
+            if (onOFF == false)
+            {
+                clearCommentButton.PerformClick();
+                clearButton.PerformClick();
+
+                shoppingCartTotalDisplayLabel.Visible = false;
+                totalShoppingCartDescriptionLabel.Visible = false;
+                addToCartButton.Enabled = true;
+                removeButton.Enabled = true;
+                clearShoppingCartButton.Enabled = true;
+
+                bookCatagoriesComboBox.SelectedIndex = -1;
+                bookCatagoriesComboBox.Text = "Book Categories";
+                bookInStockListBox.SelectedIndex = -1;
+                SwitchLoadBookPicture(null, null, null);
+
+                bookInStockListBox.Items.Clear();
+
+                bookSelectionListView.Items.Clear();
+                bookSelectionListView.Visible = false;
+
+                shoppingComboxBox.Items.Clear();
+                shoppingComboxBox.Text = "Shopping Cart Items";
+                shoppingCartDisplayPriceLabel.Text = null;
+
+                youtubeWebBrowser.Navigate("about:blank");
+                myStripStatusLabel.Text = "";
+
+
+
+            }
+
+            bookSelectionGroupBox.Visible = onOFF;
+            selectedBookGroupBox.Visible = onOFF;
+            shoppingCartGroupBox.Visible = onOFF;
+            commentGroupBox.Visible = onOFF;
+            youtubeWebBrowser.Visible = onOFF;
+            watchRelatedVideoButton.Visible = onOFF;
+            juliansBoookstoreDescriptionLabel.Visible = onOFF;
+            processGroupBox.Visible = onOFF;
+        }
+        private void SwitchSelection(string genrePicture, string descirption)
+        {
+            // load the selected image of the book category with the description tooltip 
+            if (genrePicture != "" && descirption != "")
+            {
+                bookCategoryPictureBox.Image = Image.FromFile(genrePicture);
+                IconToolTip.SetToolTip(bookCategoryPictureBox, descirption);
+            }
+            else
+            {
+                bookCategoryPictureBox.Image = null;
+            }
+        }
+
+        private void SwitchLoadBookPicture(string[] books, string[] description, double[] price)
+        {
+            try
+            {
+                // validates that a book is selected to prepare it to load in the picture box wiht the price insde the label located under the picture. Lastly, it also changes the tool tip
+                // with the appropriate text corralating with the selected book. 
+
+                if (bookInStockListBox.SelectedIndex == 0)
+                {
+
+                    bookSelectedPictureBox.Image = Image.FromFile(books[0]);
+                    IconToolTip.SetToolTip(bookSelectedPictureBox, description[0]);
+                    bookDisplayPriceLabel.Text = price[0].ToString("C");
+                }
+                else if (bookInStockListBox.SelectedIndex == 1)
+                {
+                    bookSelectedPictureBox.Image = Image.FromFile(books[1]);
+                    IconToolTip.SetToolTip(bookSelectedPictureBox, description[1]);
+                    bookDisplayPriceLabel.Text = price[1].ToString("C");
+                }
+                else if (bookInStockListBox.SelectedIndex == 2)
+                {
+                    bookSelectedPictureBox.Image = Image.FromFile(books[2]);
+                    IconToolTip.SetToolTip(bookSelectedPictureBox, description[2]);
+                    bookDisplayPriceLabel.Text = price[2].ToString("C");
+                }
+                else if (bookInStockListBox.SelectedIndex == -1)
+                {
+                    bookSelectedPictureBox.Image = null;
+                    bookDisplayPriceLabel.Text = null;
+                }
+            }
+            catch
+            {
+                MessageBox.Show("Please Select a book to load picture");
+            }
+        }
+           
+        private void SwitchSelectionLoadBooksInStock(string book1, string book2, string book3)
+        {
+            // adds the book into the book list but first clears the list box to remove any previous selected books to make sure only the categories books are shown
+            bookInStockListBox.Items.Clear();
+            bookInStockListBox.Items.Add(book1);
+            bookInStockListBox.Items.Add(book2);
+            bookInStockListBox.Items.Add(book3);
+        }
+        private void userNameTextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            // this makes sure that only lowercase characters are allowed in the username text entry. if anythin is is pressed an error icon will be turned on
+            if (e.KeyChar >= 97 && e.KeyChar <= 122 || e.KeyChar == 8)
+            {
+                userNameErrorProvider.SetError(userNameTextBox, "");
+            }
+            else
+            {
+                userNameErrorProvider.SetError(userNameTextBox, "Only lower case letters");
+                e.Handled = true;
+            }
+        }
+
+        private void juliansBookstoreForm_Load(object sender, EventArgs e)
+        {
+            // I created a class project to load the books catergories to load them into the commbobox. The ExitClearSave load method is also called to load the icons images. 
+            myClass.catergoriesBooks bookTopics = new myClass.catergoriesBooks();
+
+            bookTopics.catergoryOne = "Programing";
+            bookTopics.catergoryTwo = "Netwroking";
+            bookTopics.catergoryThree = "Web Design";
+
+
+            bookCatagoriesComboBox.Items.Add(bookTopics.catergoryOne);
+            bookCatagoriesComboBox.Items.Add(bookTopics.catergoryTwo);
+            bookCatagoriesComboBox.Items.Add(bookTopics.catergoryThree);
+
+            ExitClearSaveLoad();
+        }
+
+
+        private void currentTimer_Tick(object sender, EventArgs e)
+        {
+            // a timer that starts and counts when the program is running.
+            currentTimer.Start();
+            dateTimeToolStatusLabel.Text = DateTime.Now.ToString();
+        }
+
+        private void clearCommentButton_Click(object sender, EventArgs e)
+        {
+            //This short code clears all the sections that have to do with saving a comment.
+            nameTextBox.Clear();
+            bookTitleTextBox.Clear();
+            commentRichTextBox.Clear();
+        }
+
+        private void exitToolStripButton_Click(object sender, EventArgs e)
+        {
+            // initiates a confrim message box with a YesNoCancel button with a warning icon to give the user a chance to cancel termination 
+            // of program. Note, there is a third option which is the user can cancel and it will return to program if selected. 
+            DialogResult exit = MessageBox.Show
+                ("Are you sure that you want to end the program?", "Confirm Termination",
+                MessageBoxButtons.YesNoCancel, MessageBoxIcon.Warning);
+            
+            // if yes it will close program with the this.Close code
+            if (exit == DialogResult.Yes)
+            {
+                if (commentRichTextBox.Visible != false && commentRichTextBox.Text != "" && nameTextBox.Text != "" && bookTitleTextBox.Text != "")
+                {
+                    DialogResult askToSave = MessageBox.Show("Do you want to save comment before closing?", "Save File",MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                    if (askToSave == DialogResult.Yes)
+                    {
+                        saveAs();
+                        this.Close();
+                    }
+                    else
+                    {
+                        MessageBox.Show("FIle NoT Saved closing program", "File Save AS", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                }
+                this.Close();
+            }
+            else if (exit == DialogResult.No)
+            {
+                MessageBox.Show("Returning to bookstore.");
+            }
+        }
+
+        private void exitProcessButton_Click(object sender, EventArgs e)
+        {
+            // to save space i called a button to perfrom the similar action
+            exitToolStripButton.PerformClick();
+        }
+
+        private void clearButton_Click(object sender, EventArgs e)
+        {
+            // clears all the values for the login group 
+            userNameTextBox.Text = "";
+            userNameErrorProvider.SetError(userNameTextBox, "");
+            phoneNumMaskedTextBox.Text = "";
+        }
+
+        private void saveAsToolStripButton_Click(object sender, EventArgs e)
+        {
+            SaveFileDialog saveFile = saveAsFileDialog;
+
+            DialogResult askSaveFile = MessageBox.Show
+                ("Do you want to save?", "Save File",
+                MessageBoxButtons.YesNo);
+
+            // if yes it will close program with the this.Close code. note before confirming to save if a comment is written by taking advatage of the save method created above. 
+            if (askSaveFile == DialogResult.Yes)
+            {
+                if (saveFile.ShowDialog() == DialogResult.OK)
+                {
+                    if (nameTextBox.Text != "" && bookTitleTextBox.Text != "")
+                    {
+                        saveAs();
+                        MessageBox.Show("FIle Saved", "File Save AS", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Try again. Please fill out comment form before attempting to save file." + Environment.NewLine +
+                            "This includes name,Book Title, and comment sections.", "File Save AS", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Comment not Saved", "Save File Terminated",
+                        MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
+            }
+            else if (askSaveFile == DialogResult.No)
+            {
+                MessageBox.Show("File NOT Saved.", "File Save As", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
+            
+        }
+
+        private void bookCatagoriesComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            // selected the appropriate books to load with a particular book topic is selected. note, that it is nested inside a swithch method
+            int catergorySelection = bookCatagoriesComboBox.SelectedIndex;
+
+            switch (catergorySelection)
+            { 
+                case 0:
+                    SwitchSelection("programming_title_picture.jpg", "Programming Catergory");
+                    SwitchSelectionLoadBooksInStock("Python", "Ruby", "C#");
+                    break;
+                case 1:
+                    SwitchSelection("networking_title_picture.jpg", "Networking Catergory");
+                    SwitchSelectionLoadBooksInStock("Networking Basics", "Networking For Beginners", "Computer Networking");
+                    break;
+                case 2:
+                    SwitchSelection("web_title_picture.jpg", "Web Catergory");
+                    SwitchSelectionLoadBooksInStock("Learning Web Design", "Hello Web Design", "Sexy Web Design");
+                    break;
+                case -1:
+                    SwitchSelection("", "");
+                    SwitchSelectionLoadBooksInStock("", "", "");
+                    break;
+            }
+        }
+
+        private void bookInStockListBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            // nested inside a try-catch method I layed out te books, description, and price for each topic of books. 
+            try
+            {
+                if (bookCatagoriesComboBox.SelectedIndex == 0)
+                {
+                    string[] books = { "python_book.jpg", "ruby_book.jpg", "c#_book.jpg" };
+                    string[] description = { "Learn to Code with Python", "Programming with Ruby", "Code Like a Pro in C#" };
+                    double[] price = { 89.99, 129.99, 149.99 };
+                    SwitchLoadBookPicture(books, description, price);
+                }
+                else if (bookCatagoriesComboBox.SelectedIndex == 1)
+                {
+                    string[] books = { "networking_basics_2.jpg", "networking_for_beginners.jpg", "computer_netwroking.jpg" };
+                    string[] description = { "Networking Basics 2nd Edition", "Networking For Beginners", "Computer Networking" };
+                    double[] price = { 199.99, 149.99, 129.99 };
+                    SwitchLoadBookPicture(books, description, price);
+                }
+                else if (bookCatagoriesComboBox.SelectedIndex == 2)
+                {
+                    string[] books = { "Learning Web Design.png", "hello_web_design.jpg", "sexy_web_design.jpg" };
+                    string[] description = { "Learning Web Design", "Hello Web Design", "Sexy Web Design" };
+                    double[] price = {89.99, 12.99, 149.99};
+                    SwitchLoadBookPicture(books, description, price);
+                }
+            }
+            catch
+            {
+                MessageBox.Show("Selected a book catergory first");
+            }
+        }
+
+        private void loginButton_Click(object sender, EventArgs e)
+        {
+            // This block of code ensures that the username matches with their specific phone number password. If false it prompt user to try again. If login username matches with password
+            // the program will make the rest of the controls visible. 
+            int index = 0;
+            bool BooleanIndex = false;
+
+            
+            string[] username = { "julian", "mike", "john", "courtney", "ahsley" };
+            string[] phoneNumbers = {"(503) 123-4567", "(111) 111-1111", "(458) 200-4487", "(458) 200-4487", "(458) 200-4487"};
+            if (userNameTextBox.TextLength > 0 )
+            {
+                for (index = 0; index <= 4; index++)
+                {
+                    if (this.userNameTextBox.Text == username[index] && this.phoneNumMaskedTextBox.Text == phoneNumbers[index])
+                    {
+                        BooleanIndex = true;
+                    }
+                }
+
+                if (BooleanIndex)
+                {
+                    MessageBox.Show("Welcome back " + userNameTextBox.Text + "!");
+                    myStripStatusLabel.Text = userNameTextBox.Text + " singed in.";
+
+                    GroupBoxVisbility(true);
+                }
+                else
+                {
+                    MessageBox.Show("Could not find account. Try again!");
+                    userNameTextBox.Text = null;
+                    phoneNumMaskedTextBox.Text = null;
+                    userNameTextBox.Focus();
+                }
+            }
+            else
+            {
+                MessageBox.Show("Username and phone number entry can not be left blank");
+            }
+        }
+
+        private void addToCartButton_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                // this block of code adds the selected book inside the combobox list into the users shopping cart. Note, that is calls the sumPrice() method   
+                if (shoppingComboxBox.Items.Contains(bookInStockListBox.SelectedItem))
+                {
+                    MessageBox.Show("Book not added to Cart as it is alreay in order!" + Environment.NewLine +
+                        "Try adding a diffrent book", "Duplicate",
+                        MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
+                else
+                {
+                    shoppingComboxBox.Items.Add(bookInStockListBox.SelectedItem);
+                    myStripStatusLabel.Text = "The book " + bookInStockListBox.SelectedItem.ToString() + " was added to cart";
+                    sumPrice();
+                }
+            }
+            catch
+            {
+                MessageBox.Show("No book was selected" + Environment.NewLine +
+                       "Try selecting a book before attempting to add to cart", "Error",
+                       MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
+        }
+
+        private void removeButton_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                // removes the selected book from the cart while also subtractng the price from the total cart using the subtract method. Note, just like the sum button it validates that a book 
+                // is selected before attempting to use the subtract method. 
+                if (shoppingComboxBox.SelectedItem != null)
+                {
+                    subtractPrice();
+                    shoppingComboxBox.Items.Remove(shoppingComboxBox.SelectedItem);
+                    shoppingComboxBox.Text = "Shopping Cart Items";
+                }
+                else
+                {
+                    MessageBox.Show("No book was selected to remove" + Environment.NewLine +
+                        "Try selecting a book before attempting to remove from cart", "Error",
+                        MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
+            }
+            catch
+            {
+                shoppingComboxBox.Text = "Shopping Cart Items";
+                shoppingCartDisplayPriceLabel.Text = "";
+                MessageBox.Show("No more books in cart to remove", "Error",
+                        MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
+
+        }
+
+        private void clearShoppingCartButton_Click(object sender, EventArgs e)
+        {
+            // clears all the books in the users shopping cart. If no books are in cart it prompt an error message to the user. 
+            if (shoppingComboxBox.Items.Count > 0)
+            {
+                shoppingComboxBox.Items.Clear();
+                shoppingComboxBox.Text = "Shopping Cart Items";
+                shoppingCartDisplayPriceLabel.Text = null;
+            }
+            else
+            {
+                MessageBox.Show("There is not books in cart to remove");
+            }
+        }
+
+        private void finalizeSaleButton_Click(object sender, EventArgs e)
+        {
+            // to save space I used the perform click to follow the same actions as the finalize tool button 
+            finalSaleToolStripButton.PerformClick();
+        }
+
+        private void clearProcessButton_Click(object sender, EventArgs e)
+        {
+            // to save space I used the perform click to follow the same actions as the clear tool button 
+            clearToolStripButton.PerformClick();
+        }
+
+        private void watchRelatedVideoButton_Click(object sender, EventArgs e)
+        {
+            // to save space I used the perform click to follow the same actions as the watch tool button 
+            watchRelatedToolStripButton.PerformClick();
+        }
+        
+        private void notePadToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            // This line of code opens the notepad program. Note, that I made it show only 1 window is open at a time. 
+            try
+            {
+                if (notePadProcess.EnableRaisingEvents != true)
+                {
+                    notePadProcess.EnableRaisingEvents = true;
+                    notePadProcess.Start();
+                    myStripStatusLabel.Text = "NotePad Opened";
+                }
+                else
+                {
+                    MessageBox.Show("NotePad is already running");
+                }
+
+            }
+            catch
+            {
+                MessageBox.Show("Could not open Notepad", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void searchTheWebToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            // This line of code opens the Microsfot Edge program. Note, that I made it show only 1 window is open at a time. 
+            try
+            {
+                if (edgeProcess.EnableRaisingEvents != true)
+                {
+                    edgeProcess.EnableRaisingEvents = true;
+                    edgeProcess.Start();
+                    myStripStatusLabel.Text = "MicroSoft Edge launched";
+                }
+                else
+                {
+                    MessageBox.Show("Browser is already running");
+                }
+
+            }
+            catch
+            {
+                MessageBox.Show("Could not open Microsoft Edge", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        // the nest to blocks of code closes the notepad and Microsoft Edge if open. 
+        private void closeNotesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                notePadProcess.Kill();
+                myStripStatusLabel.Text = "Notepad Terminated";
+                notePadProcess.EnableRaisingEvents = false;
+            }
+            catch
+            {
+                MessageBox.Show("Could not close NotePad because it is not running", "Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
+        }
+
+        private void closeWebBrowserToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                edgeProcess.Kill();
+                myStripStatusLabel.Text = "MicroSoft Edge Terminated";
+                edgeProcess.EnableRaisingEvents = false;
+            }
+            catch
+            {
+                MessageBox.Show("Could not close Microsoft Edge because it is not running", "Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
+        }
+
+        private void bookSelectionListView_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            // this ensure that the user only has to select either price or book tile inside the listview for the program to selecte the entire row. 
+            ListView selectAllItemsInRow = bookSelectionListView;
+            selectAllItemsInRow.FullRowSelect = true;
+        }
+
+        private void submitButton_Click(object sender, EventArgs e)
+        {
+            // similar to the save add button in the toolstrip it saves the comment 
+            if (commentRichTextBox.Text != "" && nameTextBox.Text != "" && bookTitleTextBox.Text != "")
+            {
+                if (bookTitleTextBox.Text != "")
+                {
+                    if (commentRichTextBox.Text != "")
+                    {
+                        saveAs();
+                        clearCommentButton.PerformClick();
+                    }
+                    else
+                    {
+                        MessageBox.Show("It seems like you left the comment section blank" + Environment.NewLine + 
+                            "Please fill in comment section before attempting to submit.", "Blank Text Error",
+                       MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Please enter a book tile for which the comment is for", "Blank Text Error",
+                        MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Please enter a name, book title, and comment before attempting to submit", "Blank Text Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void clearToolStripButton_Click(object sender, EventArgs e)
+        {
+            // calls the method that will clear all the form by sending a value of false. 
+            GroupBoxVisbility(false);
+
+        }
+        
+        private void finalSaleToolStripButton_Click(object sender, EventArgs e)
+        {
+            // Finalizes the shopping cart by perfroming a transer from shopping cart to listview. 
+            if (shoppingComboxBox.Items.Count > 0)
+            {
+                DialogResult askToFinalizeSale = MessageBox.Show
+                ("Note, if you proceed you will no longer be able to modify cart." + Environment.NewLine +
+                "Do you want to process?", "Confirm",
+                MessageBoxButtons.YesNo);
+
+                if (askToFinalizeSale == DialogResult.Yes)
+                {
+                    addToListView();
+                    shoppingCartTotalDisplayLabel.Text = shoppingCartDisplayPriceLabel.Text;
+                    myStripStatusLabel.Text = "Cart order has been submitted and finalized.";
+
+
+                    shoppingCartTotalDisplayLabel.Visible = true;
+                    totalShoppingCartDescriptionLabel.Visible = true;
+                    bookSelectionListView.Visible = true;
+                    addToCartButton.Enabled = false;
+                    removeButton.Enabled = false;
+                    clearShoppingCartButton.Enabled = false;
+
+                }
+                else
+                {
+                    MessageBox.Show("Returning to Cart", "Confirm", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Can not finalize as cart is curently empty", "Cart Empty", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
+        }
+
+        private void watchRelatedToolStripButton_Click(object sender, EventArgs e)
+        {
+            // validates the selected book to launch a related video on YouTube inside the webbrowser. 
+            try
+            {
+                if (youtubeWebBrowser.Visible != false)
+                {
+                    if (bookInStockListBox.SelectedItem != null)
+                    {
+                        if (bookInStockListBox.SelectedItem.ToString() == "Python")
+                        {
+                            youtubeWebBrowser.Navigate("https://www.youtube.com/watch?v=N0lxfilGfak");
+                        }
+                        else if (bookInStockListBox.SelectedItem.ToString() == "Ruby")
+                        {
+                            youtubeWebBrowser.Navigate("https://www.youtube.com/watch?v=t_ispmWmdjY&t=33s");
+                        }
+                        else if (bookInStockListBox.SelectedItem.ToString() == "C#")
+                        {
+                            youtubeWebBrowser.Navigate("https://www.youtube.com/watch?v=GhQdlIFylQ8&t=75s");
+                        }
+                        else if (bookInStockListBox.SelectedItem.ToString() == "Networking Basic")
+                        {
+                            youtubeWebBrowser.Navigate("https://www.youtube.com/watch?v=cNwEVYkx2Kk");
+                        }
+                        else if (bookInStockListBox.SelectedItem.ToString() == "Networking For Beginners")
+                        {
+                            youtubeWebBrowser.Navigate("https://www.youtube.com/watch?v=_IOZ8_cPgu8");
+                        }
+                        else if (bookInStockListBox.SelectedItem.ToString() == "Computer Networking")
+                        {
+                            youtubeWebBrowser.Navigate("https://www.youtube.com/watch?v=QKfk7YFILws");
+                        }
+                        else if (bookInStockListBox.SelectedItem.ToString() == "Learning Web Design")
+                        {
+                            youtubeWebBrowser.Navigate("https://www.youtube.com/watch?v=C72WkcUZvco");
+                        }
+                        else if (bookInStockListBox.SelectedItem.ToString() == "Hello Web Design")
+                        {
+                            youtubeWebBrowser.Navigate("https://www.youtube.com/watch?v=IbOyBIS57C0");
+                        }
+                        else if (bookInStockListBox.SelectedItem.ToString() == "Sexy Web Design")
+                        {
+                            youtubeWebBrowser.Navigate("https://www.youtube.com/watch?v=WAFupqBfrbA");
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("Please select a book to launch a related video!", "No Selection Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    }
+                }
+            }
+            catch
+            {
+                MessageBox.Show("This is embarrassing an error occured while attempting to launch a video" + Environment.NewLine + "Try Again. if error continues reset program",
+                    "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void addCartToolStripButton_Click(object sender, EventArgs e)
+        {
+            // performs a click on the add to cart button as I want the button to perform the same action. This also saves space. 
+                addToCartButton.PerformClick();
+        }
+        private void removeToolStripButton_Click(object sender, EventArgs e)
+        {
+            // performs a click on the remove from cart button as I want the button to perform the same action. This also saves space. 
+            removeButton.PerformClick();
+        }
+
+        private void clearCartStripButton1_Click(object sender, EventArgs e)
+        {
+            // performs a click on the clear all items in cart button as I want the button to perform the same action. This also saves space. 
+            clearShoppingCartButton.PerformClick();
+            
+        }
+
+        private void juliansBookstoreForm_SizeChanged(object sender, EventArgs e)
+        {
+            // extra function that monitors when the window size has changes prompting a notification to the user. 
+            if (this.WindowState == FormWindowState.Maximized)
+            {
+                myNotifyIcon.Icon = SystemIcons.Warning;
+                myNotifyIcon.Visible = true;
+                myNotifyIcon.BalloonTipTitle = "Note";
+                myNotifyIcon.BalloonTipText = "Form size has changed";
+                myNotifyIcon.ShowBalloonTip(1000);
+            }
+            else
+            {
+                myNotifyIcon.BalloonTipTitle = "Note";
+                myNotifyIcon.BalloonTipText = "Form size back to normal size";
+                myNotifyIcon.ShowBalloonTip(1000);
+            }
+        }
+    }
+}
