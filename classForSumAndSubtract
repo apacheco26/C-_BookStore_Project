@@ -1,0 +1,23 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace myCalculator
+{
+    public class calculate
+    {
+        public static double sum(double bookCost, double cartTotal)
+        {
+            double newCartTotal = cartTotal + bookCost;
+            return newCartTotal;
+        }
+
+        public static double subtract(double cartTotal, double bookCost)
+        {
+            double newCartTotal = cartTotal - bookCost;
+            return newCartTotal;
+        }
+    }
+}
